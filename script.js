@@ -2,6 +2,7 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const response = document.getElementById("response");
 const tease = document.getElementById("tease");
+const musica = document.getElementById("musica");
 
 yesBtn.addEventListener("click", () => {
     response.textContent = "💖 Sabía que dirías que sí. Prometo hacerte feliz hoy y siempre 💖";
@@ -9,6 +10,9 @@ yesBtn.addEventListener("click", () => {
 
     noBtn.style.display = "none"; 
     tease.textContent = "";        
+
+    musica.volume = 0.3;
+    musica.play().catch(err => console.log(err));
 });
 
 
@@ -37,3 +41,4 @@ noBtn.addEventListener("mouseover", () => {
     const y = Math.random() * 200 - 200;
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
+
